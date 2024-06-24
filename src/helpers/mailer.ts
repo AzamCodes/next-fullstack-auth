@@ -33,7 +33,7 @@ export const sendEmail = async ({ email, emailType, userId }: any) => {
 
     const mailOptions = {
       from: process.env.auth_user,
-      to: email,
+      to: [email],
       subject:
         emailType === "VERIFY" ? "Verify your email" : "Reset your password",
       html:
@@ -74,6 +74,7 @@ To ensure the security of your account, please choose a strong password that is 
     };
 
     const mailresponse = await transport.sendMail(mailOptions);
+    console.log(mailresponse);
     return mailresponse;
   } catch (error: any) {
     throw new Error(error.message);
