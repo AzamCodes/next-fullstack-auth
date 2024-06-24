@@ -36,15 +36,15 @@ export default function LoginPage() {
     try {
       setLoading(true);
       const response = await axios.post("/api/users/login", data);
-      console.log("Login success", response.data);
+      // console.log("Login success", response.data);
       const status = response.data.status;
       if (status === 400) {
         toast.error("Invalid Credentials");
       }
       toast.success("Logged in successfully.");
-      router.push("/profile");
+      router.push("/");
     } catch (error: any) {
-      console.log("Login failed", error.message);
+      // console.log("Login failed", error.message);
       toast.error(
         "There was an issue with your login credentials. Please check your email and password."
       );
