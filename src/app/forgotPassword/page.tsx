@@ -21,6 +21,7 @@ const ForgotPassword = () => {
     register,
     handleSubmit,
     setValue,
+    reset,
     formState: { errors },
   } = useForm<Inputs>({
     resolver: zodResolver(forgotPasswordSchema),
@@ -32,7 +33,10 @@ const ForgotPassword = () => {
       const response = await axios.post("/api/users/forgotPass", {
         data,
       });
-      toast.success("Your password has been changed.");
+      reset();
+      toast.success("Your password has been changed.", {
+        duration: 4000,
+      });
       router.push("/login");
     } catch (error: any) {
       toast.error(error.message);

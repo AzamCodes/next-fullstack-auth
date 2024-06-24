@@ -28,7 +28,10 @@ const EmailForgotPass = () => {
       const response = await axios.post("/api/users/Emailforgotpass", {
         email,
       });
-      toast.success("Password reset email sent!");
+      reset();
+      toast.success("Password reset email sent!", {
+        duration: 4000,
+      });
       console.log("Shoot mail success", response.data);
     } catch (error: any) {
       toast.error(

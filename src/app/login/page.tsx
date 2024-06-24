@@ -41,7 +41,10 @@ export default function LoginPage() {
       if (status === 400) {
         toast.error("Invalid Credentials");
       }
-      toast.success("Logged in successfully.");
+      reset();
+      toast.success("Logged in successfully.", {
+        duration: 3000,
+      });
       router.push("/");
     } catch (error: any) {
       // console.log("Login failed", error.message);

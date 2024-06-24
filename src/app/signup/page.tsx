@@ -35,7 +35,11 @@ export default function SignUpPage() {
       setLoading(true);
       const response = await axios.post("/api/users/signup", data);
       console.log("SignUp Success", response.data);
-      router.push("/login");
+      reset();
+      toast.success("SignUp Successfully. <br> Check Email for Verification", {
+        duration: 6000,
+      });
+      // router.push("/login");
     } catch (error: any) {
       console.log("SignUp Failed!", error.message);
       toast.error(error.message);
