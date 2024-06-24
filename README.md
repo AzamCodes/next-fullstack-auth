@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## Project Name DEVLOCK
 
 ## Description
@@ -64,3 +65,6 @@ Configure your database connection and email service using appropriate environme
 ## Contributing
 
 Feel free to contribute to this project by creating pull requests. Please ensure your code adheres to the project's style guide and best practices.
+=======
+# next-fullstack-auth
+>>>>>>> 2b80aa2431c32e2efc977d05c600ab3002ba1739
